@@ -25,7 +25,7 @@ Open the folder of the project in your terminal and run
 docker compose up -d
 ```
 
-After that, run the Strapi application. For that, open a terminal at the strapi-app folder and run
+After that, run the Strapi application. Open a terminal at the strapi-app folder and run
 
 ```
 yarn dev
