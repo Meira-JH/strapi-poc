@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: strapi
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: strapi
+  template:
+    metadata:
+      labels:
+        app: strapi
+    spec:
+      containers:
+        - name: strapi
+          image: <your-strapi-image> # Replace with the path to your Docker image in a registry
+          env:
+            - name: DATABASE_CLIENT
+              value: "postgres"
+            - name: DATABASE_NAME
+              value: "strapi"
+            - name: DATABASE_HOST
+              value: "postgres"
+            - name: DATABASE_PORT
+              value: "5432"
+            - name: DATABASE_USERNAME
+              value: "strapi"
+            - name: DATABASE_PASSWORD
+              value: "strapi"
+          ports:
+            - containerPort: 1337
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 1337
+            initialDelaySeconds: 60
+            periodSeconds: 15
+          volumeMounts:
+            - name: strapi-storage
+              mountPath: /app
+      volumes:
+        - name: strapi-storage
+          persistentVolumeClaim:
+            claimName: strapi-pvc
