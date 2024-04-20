@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: strapi
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: strapi
+  template:
+    metadata:
+      labels:
+        app: strapi
+    spec:
+      containers:
+        - name: strapi
+          image: "meirajh/devops-infnet:latest"
+          ports:
+            - containerPort: 1337
+          envFrom:
+            - configMapRef:
+                name: strapi-config
+          livenessProbe:
+            httpGet:
+              path: /_health
+              port: 1337
+          readinessProbe:
+            httpGet:
+              path: /_health
+              port: 1337
