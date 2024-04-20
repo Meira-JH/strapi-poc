@@ -13,12 +13,12 @@ Repository for testing the Strapi tool. This is a proof of concept to verify det
 ## C4 Diagrams
 
 ### Context
+<img width="511" alt="Screenshot 2024-04-19 at 19 40 05" src="https://github.com/Meira-JH/strapi-poc/assets/60922841/7a47a907-f62f-4592-bd6f-793794102ba7">
 
-<img width="921" alt="Screenshot 2024-04-10 at 14 21 16" src="https://github.com/Meira-JH/strapi-poc/assets/60922841/65c0c16d-fdf3-4c8f-bfa7-0076daeea302">
 
 ### Containers
+<img width="969" alt="Screenshot 2024-04-19 at 19 42 20" src="https://github.com/Meira-JH/strapi-poc/assets/60922841/3892162d-9639-4340-ae3a-c02f89af0dcb">
 
-<img width="897" alt="Screenshot 2024-04-10 at 14 39 05" src="https://github.com/Meira-JH/strapi-poc/assets/60922841/39eed1c0-e1de-4f1f-b9d7-c7f3155b4cc3">
 
 # How to run
 
