@@ -22,15 +22,5 @@ spec:
               value: "strapi"
             - name: POSTGRES_PASSWORD
               value: "strapi"
-          livenessProbe:
-            tcpSocket:
-              port: 5432
-            initialDelaySeconds: 15
-            periodSeconds: 20
-          volumeMounts:
-            - name: postgres-storage
-              mountPath: /var/lib/postgresql/data
-      volumes:
-        - name: postgres-storage
-          persistentVolumeClaim:
-            claimName: postgres-pvc
+          ports:
+            - containerPort: 5432
